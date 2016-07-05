@@ -20,7 +20,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.andrearodriguez.facebookrecipes.FacebookRecipiesApp;
 import com.example.andrearodriguez.facebookrecipes.R;
-import com.example.andrearodriguez.facebookrecipes.RecipeListActivity;
+import com.example.andrearodriguez.facebookrecipes.recipelist.ui.RecipeListActivity;
 import com.example.andrearodriguez.facebookrecipes.entities.Recipe;
 import com.example.andrearodriguez.facebookrecipes.libs.base.ImageLoader;
 import com.example.andrearodriguez.facebookrecipes.recipesmain.RecipeMainPresenter;

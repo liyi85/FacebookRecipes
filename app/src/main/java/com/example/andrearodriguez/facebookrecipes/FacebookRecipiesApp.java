@@ -5,6 +5,12 @@ import android.content.Intent;
 
 import com.example.andrearodriguez.facebookrecipes.libs.base.di.LibsModule;
 import com.example.andrearodriguez.facebookrecipes.login.ui.LoginActivity;
+import com.example.andrearodriguez.facebookrecipes.recipelist.di.DaggerRecipeListComponent;
+import com.example.andrearodriguez.facebookrecipes.recipelist.di.RecipeListComponent;
+import com.example.andrearodriguez.facebookrecipes.recipelist.di.RecipiListModule;
+import com.example.andrearodriguez.facebookrecipes.recipelist.ui.RecipeListActivity;
+import com.example.andrearodriguez.facebookrecipes.recipelist.ui.RecipeListView;
+import com.example.andrearodriguez.facebookrecipes.recipelist.ui.adapters.OnItemClickListener;
 import com.example.andrearodriguez.facebookrecipes.recipesmain.di.DaggerRecipeMainComponent;
 import com.example.andrearodriguez.facebookrecipes.recipesmain.di.RecipeMainComponent;
 import com.example.andrearodriguez.facebookrecipes.recipesmain.di.RecipiMainModule;
@@ -58,6 +64,14 @@ public class FacebookRecipiesApp extends Application{
                 .builder()
                 .libsModule(new LibsModule(activity))
                 .recipiMainModule(new RecipiMainModule(view))
+                .build();
+
+    }
+    public RecipeListComponent getRecipeListComponent(RecipeListActivity activity, RecipeListView view, OnItemClickListener clickListener){
+        return DaggerRecipeListComponent
+                .builder()
+                .libsModule(new LibsModule(activity))
+                .recipiListModule(new RecipiListModule(view, clickListener))
                 .build();
 
     }
