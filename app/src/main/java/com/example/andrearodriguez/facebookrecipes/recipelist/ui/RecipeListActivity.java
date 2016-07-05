@@ -67,7 +67,11 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeListV
 
         if(id == R.id.action_main){
             navigateToMainScreen();
-        }else if (id == R.id.action_logout){
+        }else if (id == R.id.action_show_all){
+            presenter.showAll();
+        }else if (id == R.id.action_show_fav){
+            presenter.showFavs();
+        } else if (id == R.id.action_logout){
             logout();
         }
         return super.onOptionsItemSelected(item);

@@ -1,9 +1,11 @@
 package com.example.andrearodriguez.facebookrecipes.recipelist;
 
 import com.example.andrearodriguez.facebookrecipes.entities.Recipe;
+import com.example.andrearodriguez.facebookrecipes.entities.Recipe_Table;
 import com.example.andrearodriguez.facebookrecipes.libs.base.EventBus;
 import com.example.andrearodriguez.facebookrecipes.recipelist.events.RecipeListEvent;
 import com.raizlabs.android.dbflow.list.FlowCursorList;
+import com.raizlabs.android.dbflow.sql.language.Select;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,6 +38,13 @@ public class RecipeListRepositoryImp implements RecipeListRepository{
         recipe.delete();
         post(RecipeListEvent.DELETE_EVENT, Arrays.asList(recipe));
     }
+
+    @Override
+    public void getFavoritesRecipes() {
+        List<Recipe> recipes = new Select().from(Recipe.class).where(Recipe_Table.favorite.is(true)).queryList();
+        post(RecipeListEvent.READ_EVENT, recipes);
+    }
+
     private void post(int type, List<Recipe> recipeList){
         RecipeListEvent event = new RecipeListEvent();
         event.setType(type);

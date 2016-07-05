@@ -5,4 +5,5 @@ package com.example.andrearodriguez.facebookrecipes.recipelist;
  */
 public interface RecipeListInteractor {
     void excecute();
+    void searchFavs();
 }

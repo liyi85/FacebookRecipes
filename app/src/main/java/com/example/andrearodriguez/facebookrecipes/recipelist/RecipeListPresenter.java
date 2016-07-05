@@ -17,5 +17,8 @@ public interface RecipeListPresenter {
 
     void onEventMainThread(RecipeListEvent event);
 
+    void showAll();
+    void showFavs();
+
     RecipeListView getView();
 }
