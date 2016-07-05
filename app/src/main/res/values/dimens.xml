@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="recipe_main_icon">86dp</dimen>
     <dimen name="recipes_main_image_heigth">300dp</dimen>
+    <dimen name="recipe_list_image_size">150dp</dimen>
+    <dimen name="row_icon_padding">8dp</dimen>
 </resources>
