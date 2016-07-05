@@ -48,7 +48,7 @@ dependencies {
     compile "com.github.bumptech.glide:glide:$rootProject.ext.GlideVersion"
 
     apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersionC"
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersionC"
 
     compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"

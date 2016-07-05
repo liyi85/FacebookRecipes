@@ -11,9 +11,8 @@ import com.example.andrearodriguez.facebookrecipes.libs.base.ImageLoader;
  * Created by andrearodriguez on 6/23/16.
  */
 public class GlideImageLoader implements ImageLoader {
-
     private RequestManager glideRequestManager;
-    private RequestListener onFinishedLoadingListener;
+    private RequestListener onFinishLoadingListener;
 
     public GlideImageLoader(RequestManager glideRequestManager) {
         this.glideRequestManager = glideRequestManager;
@@ -22,28 +21,27 @@ public class GlideImageLoader implements ImageLoader {
 
     @Override
     public void load(ImageView imageView, String URL) {
-        if(onFinishedLoadingListener !=null){
-
+        if (onFinishLoadingListener !=null){
             glideRequestManager
                     .load(URL)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .centerCrop()
-                    .listener(onFinishedLoadingListener)
+                    .listener(onFinishLoadingListener)
                     .into(imageView);
-        }else{
+
+        }else {
             glideRequestManager
                     .load(URL)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .centerCrop()
                     .into(imageView);
         }
-
     }
 
     @Override
     public void setOnFinishedImageLoadingListener(Object listener) {
-        if(listener instanceof RequestListener){
-            this.onFinishedLoadingListener = (RequestListener) listener;
+        if (listener instanceof  RequestListener ){
+            this.onFinishLoadingListener = (RequestListener) listener;
         }
     }
 }

@@ -11,6 +11,7 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
  * Created by andrearodriguez on 7/3/16.
  */
 @Table(database = RecipiesDatabase.class)
+
 public class Recipe extends BaseModel{
 
     @SerializedName("recipe_id")

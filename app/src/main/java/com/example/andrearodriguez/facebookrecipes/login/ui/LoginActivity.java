@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RelativeLayout;
 
 import com.example.andrearodriguez.facebookrecipes.R;
-import com.example.andrearodriguez.facebookrecipes.RecipeMainActivity;
+import com.example.andrearodriguez.facebookrecipes.recipesmain.ui.RecipeMainActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -18,14 +18,14 @@ import com.facebook.login.widget.LoginButton;
 
 import java.util.Arrays;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @Bind(R.id.btnLogin)
+    @BindView(R.id.btnLogin)
     LoginButton btnLogin;
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     RelativeLayout container;
 
     private CallbackManager callbackManager;
@@ -41,8 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         callbackManager = CallbackManager.Factory.create();
+
         btnLogin.setPublishPermissions(Arrays.asList("publish_actions"));
         btnLogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+
             @Override
             public void onSuccess(LoginResult loginResult) {
                 navigateToMainScreen();

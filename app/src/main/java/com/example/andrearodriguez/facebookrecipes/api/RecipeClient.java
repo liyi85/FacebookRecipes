@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RecipeClient {
     private Retrofit retrofit;
-    private final static String BASE_URL = "https://platform.fatsecret.com/api/";
+    private final static String BASE_URL = "http://food2fork.com/api/";
 
     public RecipeClient(){
         this.retrofit = new Retrofit.Builder()
@@ -17,6 +17,6 @@ public class RecipeClient {
                 .build();
     }
     public RecipeService getRecipeService(){
-        return this.retrofit.create(RecipeService.class);
+        return retrofit.create(RecipeService.class);
     }
 }

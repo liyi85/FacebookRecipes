@@ -11,6 +11,6 @@ public interface RecipeService {
     @GET("search")
     Call<RecipeSearchResponse> search(@Query("key") String key,
                                       @Query("sort") String sort,
-                                      @Query("count") String count,
-                                      @Query("page") String page);
+                                      @Query("count") int count,
+                                      @Query("page") int page);
 }
