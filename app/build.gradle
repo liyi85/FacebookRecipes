@@ -7,8 +7,9 @@ repositories {
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 23
+    buildToolsVersion '23.0.1'
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.andrearodriguez.facebookrecipes"
@@ -35,32 +36,25 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-
-
     compile "com.android.support:appcompat-v7:$rootProject.ext.suportLibraryVersion"
     compile "com.android.support:support-v4:$rootProject.ext.suportLibraryVersion"
     compile "com.android.support:design:$rootProject.ext.suportLibraryVersion"
-
     compile "com.facebook.android:facebook-android-sdk:$rootProject.ext.facebookVersion"
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.GlideVersion"
-
     apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersionC"
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersionC"
-
     compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
-
     apt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
     compile "javax.annotation:jsr250-api:$rootProject.ext.jsr250Version"
     compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
-
     apt "com.github.Raizlabs.DBFlow:dbflow-processor:$rootProject.ext.dbflowVersion"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:$rootProject.ext.dbflowVersion"
     compile "com.github.Raizlabs.DBFlow:dbflow:$rootProject.ext.dbflowVersion"
 
-
-
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
+    testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
 }

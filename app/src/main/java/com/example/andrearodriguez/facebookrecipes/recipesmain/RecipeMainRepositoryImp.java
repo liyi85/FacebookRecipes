@@ -34,7 +34,7 @@ public class RecipeMainRepositoryImp implements RecipeMainRepository{
         Callback<RecipeSearchResponse> callback = new Callback<RecipeSearchResponse>() {
             @Override
             public void onResponse(Call<RecipeSearchResponse> call, Response<RecipeSearchResponse> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccess()){
                     RecipeSearchResponse recipeSearchResponse = response.body();
                     if (recipeSearchResponse.getCount()==0){ // no encontro receta
                         setRecipePage( new Random().nextInt(RECIPE_RANGE));
